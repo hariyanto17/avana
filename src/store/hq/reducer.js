@@ -5,8 +5,8 @@ const initialState = {
     "isShowed": false,
     "isAllowed": false,
     "childs": [
-        { "id": "hq_stockist", "isShowed": false, "isAllowed": false },
-        { "id": "hq_dropship_affiliate", "isShowed": false, "isAllowed": false }
+        { "id": "hq-stockist", "isShowed": false, "isAllowed": false },
+        { "id": "hq-dropship_affiliate", "isShowed": false, "isAllowed": false }
     ]
 };
 

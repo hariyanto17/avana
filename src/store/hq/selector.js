@@ -1,1 +1,1 @@
-export const dashboardSelector = state => state.hq;
+export const hqSelector = state => state.hq;

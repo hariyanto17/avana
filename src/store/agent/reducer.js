@@ -4,7 +4,7 @@ const initialState = {
   "id": "agent",
   "isShowed": true,
   "isAllowed": false,
-  "childs": [{ "id": "my_purchase", "isShowed": true, "isAllowed": true }]
+  "childs": [{ "id": "my-purchase", "isShowed": true, "isAllowed": true }]
 };
 
 const agent = (state = initialState, action) => {

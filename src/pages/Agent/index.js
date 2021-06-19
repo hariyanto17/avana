@@ -1,6 +1,6 @@
 import { Sidebar } from "../../components";
 
-const MyProduct = () => {
+const Agent = () => {
   return <Sidebar/>
 };
-export default MyProduct;
+export default Agent;

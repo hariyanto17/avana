@@ -1,6 +1,6 @@
 import { Sidebar } from "../../components";
 
-const MyOrders = () => {
+const Hq = () => {
   return <Sidebar/>
 };
-export default MyOrders;
+export default Hq;
