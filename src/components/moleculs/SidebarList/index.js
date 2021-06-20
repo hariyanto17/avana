@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { shallowEqual, useSelector } from "react-redux";
 import {
   agentSelector,
@@ -8,13 +7,13 @@ import {
   ordersSelector,
   productsSelector,
   settingsSelector,
-  webstoreSelector,
+  webstoreSelector
 } from "../../../store";
-
 import { SidebarLink } from "../../atoms";
 
+
 const SidebarList = () => {
-  const [dropDown, setDropDown] = useState(false);
+
 
   //redux state
   const dashboard = useSelector(dashboardSelector, shallowEqual);
