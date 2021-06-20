@@ -1,21 +1,21 @@
 import actionTypes from "../actionTypes";
 
 /**
- * @name setAgentdShow
+ * @name setAgentShow
  * @description action reducer for set loading modal
  * @param {*} value
  */
-export const setAgentdShow = (value) => ({
-  type: actionTypes.agentd.SET_SHOW,
+export const setAgentShow = (value) => ({
+  type: actionTypes.agent.SET_SHOW,
   value,
 });
 
 /**
- * @name setAgentdAllow
+ * @name setAgentAllow
  * @description action reducer for set loading modal
  * @param {*} value
  */
-export const setAgentdAllow = (value) => ({
-  type: actionTypes.agentd.SET_ALLOW,
+export const setAgentAllow = (value) => ({
+  type: actionTypes.agent.SET_ALLOW,
   value,
 });

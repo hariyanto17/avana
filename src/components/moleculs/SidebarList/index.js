@@ -6,7 +6,7 @@ import {
   hqSelector,
   modulesSelector,
   ordersSelector,
-  ProductsSelector,
+  productsSelector,
   settingsSelector,
   webstoreSelector,
 } from "../../../store";
@@ -21,7 +21,7 @@ const SidebarList = () => {
   const hq = useSelector(hqSelector, shallowEqual);
   const agent = useSelector(agentSelector, shallowEqual);
   const orders = useSelector(ordersSelector, shallowEqual);
-  const products = useSelector(ProductsSelector, shallowEqual);
+  const products = useSelector(productsSelector, shallowEqual);
   const webstore = useSelector(webstoreSelector, shallowEqual);
   const settings = useSelector(settingsSelector, shallowEqual);
   const modules = useSelector(modulesSelector, shallowEqual);

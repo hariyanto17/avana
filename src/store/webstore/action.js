@@ -6,7 +6,7 @@ import actionTypes from "../actionTypes";
  * @param {*} value
  */
 export const setWebstoreShow = (value) => ({
-  type: actionTypes.dashboard.SET_SHOW,
+  type: actionTypes.webstore.SET_SHOW,
   value,
 });
 
@@ -16,6 +16,6 @@ export const setWebstoreShow = (value) => ({
  * @param {*} value
  */
 export const setWebstoreAllow = (value) => ({
-  type: actionTypes.dashboard.SET_ALLOW,
+  type: actionTypes.webstore.SET_ALLOW,
   value,
 });
