@@ -1,13 +1,22 @@
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Sidebar, Toggle } from "../../components";
-import { webstoreSelector, setWebstoreAllow, setWebstoreShow } from "../../store";
+import {
+  webstoreSelector,
+  setWebstoreAllow,
+  setWebstoreShow,
+  setAllert,
+} from "../../store";
 
 const WebStore = () => {
   const dispatch = useDispatch();
   const webstore = useSelector(webstoreSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setWebstoreShow(!webstore.isShowed));
+    if (!webstore.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setWebstoreShow(!webstore.isShowed));
+    }
   };
 
   const handleAllow = () => {

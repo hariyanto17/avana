@@ -9,7 +9,7 @@ import { composeWithDevTools } from "redux-devtools-extension";
  * ======================================
  */
 
-import loading from "./loading/reducer";
+import allert from "./allert/reducer";
 import dashboard from "./dashboard/reducer";
 import hq from "./hq/reducer";
 import agent from "./agent/reducer";
@@ -20,7 +20,7 @@ import settings from "./settings/reducer";
 import modules from "./modules/reducer";
 
 const reducer = combineReducers({
-  loading,
+  allert,
   dashboard,
   hq,
   agent,
@@ -58,7 +58,7 @@ export { store, actionTypes };
  * ======================================
  */
 
-export * from "./loading/action";
+export * from "./allert/action";
 export * from "./dashboard/action";
 export * from "./hq/action";
 export * from "./agent/action";
@@ -73,7 +73,7 @@ export * from "./modules/action";
  * SELECTOR
  * ======================================
  */
-export * from "./loading/selector";
+export * from "./allert/selector";
 export * from "./dashboard/selector";
 export * from "./hq/selector";
 export * from "./agent/selector";

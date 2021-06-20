@@ -1,13 +1,22 @@
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Sidebar, Toggle } from "../../components";
-import { settingsSelector, setSettingsAllow, setSettingsShow } from "../../store";
+import {
+  settingsSelector,
+  setSettingsAllow,
+  setSettingsShow,
+  setAllert,
+} from "../../store";
 
 const Settings = () => {
   const dispatch = useDispatch();
   const settings = useSelector(settingsSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setSettingsShow(!settings.isShowed));
+    if (!settings.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setSettingsShow(!settings.isShowed));
+    }
   };
 
   const handleAllow = () => {

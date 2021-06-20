@@ -2,6 +2,7 @@ import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Sidebar, Toggle } from "../../components";
 import {
   dashboardSelector,
+  setAllert,
   setDashboardAllow,
   setDashboardShow,
 } from "../../store";
@@ -11,7 +12,11 @@ const Dasboard = () => {
   const dashboard = useSelector(dashboardSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setDashboardShow(!dashboard.isShowed));
+    if (!dashboard.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setDashboardShow(!dashboard.isShowed));
+    }
   };
 
   const handleAllow = () => {

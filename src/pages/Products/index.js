@@ -4,6 +4,7 @@ import {
   productsSelector,
   setProductsAllow,
   setProductsShow,
+  setAllert,
 } from "../../store";
 
 const Products = () => {
@@ -11,7 +12,11 @@ const Products = () => {
   const products = useSelector(productsSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setProductsShow(!products.isShowed));
+    if (!products.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setProductsShow(!products.isShowed));
+    }
   };
 
   const handleAllow = () => {

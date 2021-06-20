@@ -1,11 +1,11 @@
 import actionTypes from '../actionTypes';
 
 /**
- * @name setLoading
+ * @name setAllert
  * @description action reducer for set loading modal
  * @param {*} value
  */
-export const setLoading = value => ({
-  type: actionTypes.loading.SET_LOADING,
+export const setAllert = value => ({
+  type: actionTypes.allert.SET_ALLERT,
   value
 });

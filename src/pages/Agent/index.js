@@ -1,13 +1,17 @@
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Sidebar, Toggle } from "../../components";
-import { agentSelector, setAgentAllow, setAgentShow } from "../../store";
+import { agentSelector, setAgentAllow, setAgentShow, setAllert } from "../../store";
 
 const Agent = () => {
   const dispatch = useDispatch();
   const agent = useSelector(agentSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setAgentShow(!agent.isShowed));
+    if (!agent.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setAgentShow(!agent.isShowed));
+    }
   };
 
   const handleAllow = () => {

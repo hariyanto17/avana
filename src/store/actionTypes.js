@@ -1,5 +1,5 @@
-const loading = {
-  SET_LOADING: "SET_LOADING",
+const allert = {
+  SET_ALLERT: "SET_ALLERT",
 };
 
 const dashboard = {
@@ -43,7 +43,7 @@ const modules = {
 };
 
 const actionTypes = {
-  loading,
+  allert,
   dashboard,
   hq,
   agent,

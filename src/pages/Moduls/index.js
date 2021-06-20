@@ -1,13 +1,17 @@
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Sidebar, Toggle } from "../../components";
-import { modulesSelector, setModulesAllow, setModulesShow } from "../../store";
+import {setAllert, modulesSelector, setModulesAllow, setModulesShow } from "../../store";
 
 const Moduls = () => {
   const dispatch = useDispatch();
   const moduls = useSelector(modulesSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setModulesShow(!moduls.isShowed));
+    if (!moduls.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setModulesShow(!moduls.isShowed));
+    }
   };
 
   const handleAllow = () => {

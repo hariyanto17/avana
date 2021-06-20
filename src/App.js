@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Allert } from "./components";
 import {
   Hq,
   Dashboard,
@@ -10,7 +11,7 @@ import {
   WebStore,
 } from "./pages";
 
-const App = () => {
+const MainApp = () => {
   return (
     <Router>
       <Switch>
@@ -24,6 +25,15 @@ const App = () => {
         <Route path="/webstore" component={WebStore} />
       </Switch>
     </Router>
+  );
+};
+
+const App = () => {
+  return (
+    <>
+      <Allert />
+      <MainApp />
+    </>
   );
 };
 

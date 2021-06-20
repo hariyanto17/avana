@@ -1,13 +1,22 @@
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Sidebar, Toggle } from "../../components";
-import { ordersSelector, setOrdersAllow, setOrdersShow } from "../../store";
+import {
+  ordersSelector,
+  setOrdersAllow,
+  setOrdersShow,
+  setAllert,
+} from "../../store";
 
 const Orders = () => {
   const dispatch = useDispatch();
   const orders = useSelector(ordersSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setOrdersShow(!orders.isShowed));
+    if (!orders.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setOrdersShow(!orders.isShowed));
+    }
   };
 
   const handleAllow = () => {

@@ -1,13 +1,17 @@
 import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { Sidebar, Toggle } from "../../components";
-import { hqSelector, setHqAllow, setHqShow } from "../../store";
+import { hqSelector, setHqAllow, setHqShow, setAllert } from "../../store";
 
 const Hq = () => {
   const dispatch = useDispatch();
   const hq = useSelector(hqSelector, shallowEqual);
 
   const handleShow = () => {
-    dispatch(setHqShow(!hq.isShowed));
+    if (!hq.isAllowed) {
+      dispatch(setAllert(true));
+    } else {
+      dispatch(setHqShow(!hq.isShowed));
+    }
   };
 
   const handleAllow = () => {
